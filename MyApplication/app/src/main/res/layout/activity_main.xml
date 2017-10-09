@@ -5,14 +5,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="a324.mobileapplication.MainActivity">
+    tools:context="a324.mobileapplication.MainActivity"
+    android:background="@drawable/blocks_background">
 
     <LinearLayout
         android:layout_width="368dp"
         android:layout_height="495dp"
+        android:background="@drawable/blocks_background"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/blocks_logo" />
 
         <TextView
             android:id="@+id/textView12"
@@ -29,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Choose File"
+            android:visibility="visible"
             app:layout_constraintHorizontal_bias="0.978"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -38,7 +47,7 @@
             android:id="@+id/textViewFileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="File URI"
             app:layout_constraintHorizontal_bias="0.904"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -74,17 +83,12 @@
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_editor_absoluteY="286dp" />
 
-        <TextView
-            android:id="@+id/textView13"
+        <Button
+            android:id="@+id/btnShowValidatedFiles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.948"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.301" />
+            android:text="Show validated files" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
