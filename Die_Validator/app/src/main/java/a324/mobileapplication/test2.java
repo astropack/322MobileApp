@@ -8,12 +8,11 @@ public class test2{
     /*
     public static void main(String[] args) throws IOException{
         File tmpFile = File.createTempFile("tmp",".txt");
-        //selectPDF();
+        selectPDF();
         tmpFile.delete();
     }
-    */
-    /*
-    public static void selectPDF()throws IOException{		//SELECT THE PDF
+
+    public static void selectPDF()throws IOException{
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
         int result = fileChooser.showOpenDialog(null);
@@ -24,7 +23,7 @@ public class test2{
         }
     }
     */
-    public static void convertPDF(File pdfin) throws IOException{	//CONVERT PDF TO TEXT FILE
+    public static void convertPDF(File pdfin) throws IOException{
         InputStream is = new FileInputStream(pdfin);
         OutputStream oos = new FileOutputStream("tmp.txt");
         byte[] buf = new byte[8192];
@@ -35,9 +34,9 @@ public class test2{
         }
         oos.close();
         is.close();
-        stringBuilder();
+        //stringBuilder();
     }
-    public static void stringBuilder() throws IOException{			//IS THIS THE HASHING WHEN GETsHA256 RETURNS A VALUE?
+    public static void stringBuilder() throws IOException{
         File toHash = new File("C:\\Users\\User-PC\\Desktop\\tmp.txt");
         BufferedReader reader = new BufferedReader(new FileReader(toHash));
         String line = null;
@@ -56,7 +55,7 @@ public class test2{
         BufferedWriter hashout = new BufferedWriter(new FileWriter(hashFile));
         hashout.write(getSha256(stringBuilder.toString()));
         hashout.close();
-        //System.out.println(getSha256(stringBuilder.toString()));      Value won't be printed out on mobile device
+        System.out.println(getSha256(stringBuilder.toString()));
     }
 
     public static String getSha256(String tmp){
